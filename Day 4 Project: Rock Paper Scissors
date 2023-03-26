@@ -40,9 +40,9 @@ elif UserChoice == 0 and RandomChoice == 2:
   print("You won.")
 elif RandomChoice == 0 and UserChoice == 2:
   print("You lose.")
-elif UserChoice > RandomChoice:
+elif UserChoice > RandomChoice: #Burada iki ihtimali birden degerlendiriyor. 1'e karsi 0 ile 2'ye karsi 1. 2ye karsi 0 olursa zaten onceki elif dongusunde bu "You lose" dondurecek.
   print("You won.")
-elif RandomChoice > UserChoice:
+elif RandomChoice > UserChoice: #Burada da bilgisayarin kazandigi ihtimaller degerlendiriliyor.
   print("You lose.")
 elif UserChoice == RandomChoice:
   print("Draw")
