@@ -31,18 +31,21 @@ scissors = '''
 
 Selection = [rock, paper, scissors]
 UserChoice = int(input("What do you choose? Type 0 for Rock, 1 for Paper or 2 for Scissors.\n"))
-print(f"You chose {Selection[UserChoice]}")
-RandomChoice = random.randint(0,2)
-print(f"Computer chose {Selection[RandomChoice]}")
+
 if int(UserChoice) < 0 or int(UserChoice) > 2:
   print("You typed an invalid number, you lose!")
-elif UserChoice == 0 and RandomChoice == 2:
-  print("You won.")
-elif RandomChoice == 0 and UserChoice == 2:
-  print("You lose.")
-elif UserChoice > RandomChoice: #Burada iki ihtimali birden degerlendiriyor. 1'e karsi 0 ile 2'ye karsi 1. 2ye karsi 0 olursa zaten onceki elif dongusunde bu "You lose" dondurecek.
-  print("You won.")
-elif RandomChoice > UserChoice: #Burada da bilgisayarin kazandigi ihtimaller degerlendiriliyor.
-  print("You lose.")
-elif UserChoice == RandomChoice:
-  print("Draw")
+else:
+  print(f"You chose {Selection[UserChoice]}")
+  RandomChoice = random.randint(0,2)
+  print(f"Computer chose {Selection[RandomChoice]}")
+  if UserChoice == 0 and RandomChoice == 2:
+    print("You won.")
+  elif RandomChoice == 0 and UserChoice == 2:
+    print("You lose.")
+  elif UserChoice > RandomChoice: #Burada iki ihtimali birden degerlendiriyor. 1'e karsi 0 ile 2'ye karsi 1. 2ye karsi 0 olursa zaten onceki elif dongusunde bu "You lose" dondurecek.
+    print("You won.")
+  elif RandomChoice > UserChoice: #Burada da bilgisayarin kazandigi ihtimaller degerlendiriliyor.
+    print("You lose.")
+  elif UserChoice == RandomChoice:
+    print("Draw")
+  
