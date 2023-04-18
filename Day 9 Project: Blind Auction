@@ -1,0 +1,34 @@
+from replit import clear
+from  art import logo
+#HINT: You can call clear() to clear the output in the console.
+
+def find_the_winner():
+  highest_bod = 0
+  # for i in all_bids.values():
+  #   if i > highest_bod:
+  #     highest_bod = i
+  # for j in all_bids.keys():
+  #   if all_bids[j] == highest_bod:
+  #     print(f"The winner is {j} with a bid of ${all_bids[j]}")
+  for bidder in all_bids:
+    if all_bids[bidder] > highest_bod:
+      highest_bod = all_bids[bidder]
+      winner = bidder
+  print(f"The winner is {winner} with a bid of ${highest_bod}")
+
+
+
+print(logo)
+print("Welcome to the secret auction program!")
+
+all_bids = {}
+restart = True
+while restart:
+  name = input("What is your name?: ")
+  bid = int(input("what is your bid?: $"))
+  all_bids[name] = bid
+  choice = input("Are there any bidders? Type 'yes' or 'no'\n")
+  clear()
+  if choice == "no":
+    restart = False
+    find_the_winner()
