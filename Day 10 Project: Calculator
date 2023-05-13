@@ -1,0 +1,85 @@
+def choice_of_keeping_result(result):
+    global keep_result
+    global first_number
+    choice_keep_result = input(
+        f"Type 'y' to continue with {result} or type 'n' to start a new calculation:\n"
+    )
+    if choice_keep_result == "y":
+        first_number = result
+    elif choice_keep_result == "n":
+        keep_result = False
+    return first_number
+
+
+def addition(first_number, second_number):
+    result = first_number + second_number
+    print(result)
+    choice_of_keeping_result(result)
+
+
+def substraction(first_number, second_number):
+    result = first_number - second_number
+    print(result)
+    choice_of_keeping_result(result)
+
+
+def division(first_number, second_number):
+    result = first_number / second_number
+    print(result)
+    choice_of_keeping_result(result)
+
+
+def multiplication(first_number, second_number):
+    result = first_number * second_number
+    print(result)
+    choice_of_keeping_result(result)
+
+
+def calculator():
+    global keep_result
+    global first_number
+    print(
+        """
+ _____________________
+|  _________________  |
+| | JO           0. | |
+| |_________________| |
+|  ___ ___ ___   ___  |
+| | 7 | 8 | 9 | | + | |
+| |___|___|___| |___| |
+| | 4 | 5 | 6 | | - | |
+| |___|___|___| |___| |
+| | 1 | 2 | 3 | | x | |
+| |___|___|___| |___| |
+| | . | 0 | = | | / | |
+| |___|___|___| |___| |
+|_____________________|
+
+"""
+    )
+    restart = True
+    while restart:
+        first_number = float(input("What is the first number?: "))
+        keep_result = True
+        while keep_result:
+            operation_option = input(
+                """
+        +
+        -
+        *
+        /
+        Pick an operation: """
+            )
+            second_number = float(input("What is the next number?: "))
+            if operation_option == "+":
+                addition(first_number, second_number)
+            elif operation_option == "-":
+                substraction(first_number, second_number)
+            elif operation_option == "/":
+                division(first_number, second_number)
+            elif operation_option == "*":
+                multiplication(first_number, second_number)
+
+
+first_number = 0
+calculator()
